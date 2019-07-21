@@ -7,7 +7,7 @@ describe 'my own map' do
 
   it "returns an array with the original values" do
     dune = ["paul", "gurney", "vladimir", "jessica", "chani"]
-    expect(map(dune){|n| n}).to eq(dune)
+    expect(map_no_change(dune){|n| n}).to eq(dune)
   end
 
   it "returns an array with the original values multiplied by 2" do
