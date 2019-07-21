@@ -43,11 +43,11 @@ describe 'my own reduce' do
 
   it "returns true when a truthy value is present" do
     source_array = [ false, nil, nil, nil, true]
-    expect(reduce_any(source_array){|memo, n| memo || n}).to eq(true)
+    expect(reduce_any_true(source_array){|memo, n| memo || n}).to eq(true)
   end
 
   it "returns false when no truthy value is present" do
     source_array = [ false, nil, nil, nil]
-    expect(reduce(source_array){|memo, n| memo && n}).to eq(false)
+    expect(reduce_any_true(source_array){|memo, n| memo && n}).to eq(false)
   end
 end
