@@ -22,3 +22,11 @@ def reduce_total(source_array, starting_point = nil)
     source_array.reduce(starting_point) {|num, sum| num + sum}
   end
 end
+
+def reduce_all_true(source_array)
+  source_array.reduce(true) {|a, b| a && b}
+end
+
+def reduce_any_true(source_array)
+  source_array_reduce(:|)
+end
