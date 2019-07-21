@@ -28,5 +28,5 @@ def reduce_all_true(source_array)
 end
 
 def reduce_any_true(source_array)
-  source_array_reduce(:|)
+  source_array.reduce(:|)
 end
