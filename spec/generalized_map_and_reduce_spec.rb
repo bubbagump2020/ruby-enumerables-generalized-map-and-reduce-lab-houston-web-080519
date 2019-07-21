@@ -33,17 +33,17 @@ describe 'my own reduce' do
 
   it "returns true when all values are truthy" do
     source_array = [1, 2, true, "razmatazz"]
-    expect(reduce_all_truthy(source_array){|memo, n| memo && n}).to be_truthy
+    expect(reduce_all_true(source_array){|memo, n| memo && n}).to be_truthy
   end
 
   it "returns false when any value is false" do
     source_array = [1, 2, true, "razmatazz", false]
-    expect(reduce(source_array){|memo, n| memo && n}).to be_falsy
+    expect(reduce_all_true(source_array){|memo, n| memo && n}).to be_falsy
   end
 
   it "returns true when a truthy value is present" do
     source_array = [ false, nil, nil, nil, true]
-    expect(reduce(source_array){|memo, n| memo || n}).to eq(true)
+    expect(reduce_any(source_array){|memo, n| memo || n}).to eq(true)
   end
 
   it "returns false when no truthy value is present" do
